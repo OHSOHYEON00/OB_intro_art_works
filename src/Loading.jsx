@@ -7,8 +7,8 @@ const navigate = useNavigate();
 
     useEffect(() => {
         setTimeout(() => navigate('/card'), 5000)
-    } ,[])
-    
+    } ,[navigate])
+
     return (
         <>
         <div className='z-10 fixed left-0 h-screen w-screen flex justify-center items-center'>
