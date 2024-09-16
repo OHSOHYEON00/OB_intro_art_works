@@ -40,7 +40,7 @@ const Card = () => {
   return (
     <div
       className={
-        "custom-card w-screen h-screen justify-between flex flex-col items-center py-14 md:py-20 px-10"
+        "custom-card w-screen h-screen justify-evenly flex flex-col items-center  px-10"
       }
     >
       <img

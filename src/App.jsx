@@ -16,7 +16,7 @@ function App() {
     };
 
     return (
-      <div className={`cotainer flex justify-center items-center h-screen`}>
+      <div className={`cotainer flex justify-center items-center`}>
         <div className="max-h-[900px] flex justify-center w-screen h-screen items-center max-w-[480px] shadow-[0px_0px_12px_10px_rgb(144_144_255_/_20%)] ">
           <img alt="bg" src={mainBg} width={300} height={500} />
           <div
