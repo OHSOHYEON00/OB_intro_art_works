@@ -7,7 +7,6 @@ import Card from "./Card.jsx";
 
 function App() {
 
-
   const Main = () => {
     const [show, setIsShow] = useState(false);
   
