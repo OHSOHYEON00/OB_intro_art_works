@@ -10,8 +10,5 @@
     "main.1fca4377.js.map": "/OB_intro_art_works/static/js/main.1fca4377.js.map",
     "453.ec2b4463.chunk.js.map": "/OB_intro_art_works/static/js/453.ec2b4463.chunk.js.map"
   },
-  "entrypoints": [
-    "static/css/main.c8e1ccfd.css",
-    "static/js/main.1fca4377.js"
-  ]
+  "entrypoints": ["static/css/main.c8e1ccfd.css", "static/js/main.1fca4377.js"]
 }
