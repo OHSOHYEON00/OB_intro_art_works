@@ -16,11 +16,11 @@ function App() {
     };
 
     return (
-      <div className={`cotainer flex justify-center items-center h-scree`}>
+      <div className={`cotainer flex justify-center items-center h-screen`}>
         <div className="max-h-[900px] flex justify-center w-screen h-screen items-center max-w-[480px] shadow-[0px_0px_12px_10px_rgb(144_144_255_/_20%)] ">
           <img alt="bg" src={mainBg} width={300} height={500} />
           <div
-            className="absolute font-['DungGeunMo'] text-xl right-[23%] top-[50%] hover:cursor-pointer animate-bounce"
+            className="absolute font-['DungGeunMo'] text-xl right-[22%] md:right-[38%] md:top-[53%] top-[55%] hover:cursor-pointer animate-bounce"
             onClick={() => setIsShow(true)}
           >
             <div className=" bg-[#d0d0d0] p-[8px]">동전넣기</div>
@@ -39,6 +39,7 @@ function App() {
                 height="90%"
                 onEnded={onVideoEnd}
                 preload="auto"
+                className="mt-20 w-[95%] md:w-[50%] md:mt-28"
               >
                 <source src={LoadingVideo} type="video/mp4" />
                 Your browser doesn't support the video tag.
