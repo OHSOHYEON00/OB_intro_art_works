@@ -40,20 +40,38 @@ const Card = () => {
     );
   };
 
+  const sv = () => {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", sv);
+    window.addEventListener("load", sv);
+
+    return () => {
+      window.removeEventListener("resize", sv);
+      window.removeEventListener("load", sv);
+    };
+  }, []);
+
   return (
     <div
       className={
-        "cotainer custom-card h-screen justify-evenly flex flex-col items-center"
+        "cotainer custom-card h-screen-dynamic flex items-center flex-col"
       }
     >
+      {/* md:h-[60%] md:w-auto */}
       <img
-        className="shadow-3xl w-[60%] mx-10"
+        className="shadow-3xl w-[60%] h-auto md:h-[60%] md:w-auto mt-[10vh] mx-10"
         src={imageList[randomImg]}
         alt="card"
         width={320}
         height={500}
       />
-
+      <div className="font-['DungGeunMo'] text-[1rem] sm:text-[1.5rem] md:text-[1.7rem] mt-7 animate-bounce">
+        <span className="mr-1">&#9650;</span>꾹 눌러서 수집
+      </div>
       <div className="font-['DungGeunMo'] absolute bottom-5 px-5 w-full flex justify-between text-[2.5vw] md:text-[2vw]">
         <Button
           text={"다시하기"}
