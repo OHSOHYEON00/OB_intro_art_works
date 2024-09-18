@@ -30,9 +30,12 @@ const Card = () => {
 
   const Button = ({ text, onClick }) => {
     return (
-      <div className="flex flex-col items-center">
+      <div
+        className="flex flex-col items-center hover:cursor-pointer"
+        onClick={onClick}
+      >
         <img src={icon} alt={"icon1"} width={25} />
-        <button onClick={onClick}>{text}</button>
+        <span>{text}</span>
       </div>
     );
   };
@@ -40,18 +43,18 @@ const Card = () => {
   return (
     <div
       className={
-        "custom-card w-screen h-screen justify-evenly flex flex-col items-center  px-10"
+        "cotainer custom-card h-screen justify-evenly flex flex-col items-center"
       }
     >
       <img
-        className="shadow-3xl md:w-[55%]"
+        className="shadow-3xl w-[60%] mx-10"
         src={imageList[randomImg]}
         alt="card"
         width={320}
         height={500}
       />
 
-      <div className="font-['DungGeunMo'] w-full flex justify-between text-[5vw] md:text-[3.5vw]">
+      <div className="font-['DungGeunMo'] absolute bottom-5 px-5 w-full flex justify-between text-[2.5vw] md:text-[2vw]">
         <Button
           text={"다시하기"}
           onClick={() => navigate(`${process.env.PUBLIC_URL}/`)}
