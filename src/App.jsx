@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import mainBg from "./mainBg.png";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -15,8 +15,25 @@ function App() {
       navigate(`${process.env.PUBLIC_URL}/card`);
     };
 
+    const sv = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    };
+
+    useEffect(() => {
+      window.addEventListener("resize", sv);
+      window.addEventListener("load", sv);
+
+      return () => {
+        window.removeEventListener("resize", sv);
+        window.removeEventListener("load", sv);
+      };
+    }, []);
+
     return (
-      <div className={`cotainer h-screen flex justify-center items-center`}>
+      <div
+        className={`cotainer h-screen-dynamic flex justify-center items-center`}
+      >
         <div className="max-h-[900px] flex justify-center w-screen h-screen items-center max-w-[480px] shadow-[0px_0px_12px_10px_rgb(144_144_255_/_20%)] ">
           <img alt="bg" src={mainBg} width={300} height={500} />
 
