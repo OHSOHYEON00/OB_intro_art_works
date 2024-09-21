@@ -52,6 +52,7 @@ const Card = () => {
     window.addEventListener("resize", sv);
     window.addEventListener("orientationchange", sv);
     window.addEventListener("load", sv);
+    sv();
 
     if (window.performance) {
       const [navigation] = window.performance.getEntriesByType("navigation");
@@ -70,7 +71,7 @@ const Card = () => {
   return (
     <div
       className={
-        "cotainer relative custom-card h-screen-dynamic flex items-center flex-col"
+        "cotainer relative custom-card h-screen-dynamic h-screen flex items-center flex-col"
       }
     >
       {loading && (
