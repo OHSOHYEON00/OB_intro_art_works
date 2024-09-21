@@ -75,17 +75,18 @@ const Card = () => {
       }
     >
       {loading && (
-        <div className="shadow-3xl w-[320px] h-auto md:h-[60%] md:w-auto mt-[10vh] mx-10"></div>
+        <div className="shadow-3xl w-[320px] h-auto sm:h-[60%] sm:w-auto mt-[10vh] mx-10"></div>
       )}
-      {/* <img
-        className="absolute w-screen "
-        src={"/carddeck.png"}
+      <img
+        className="absolute w-[77%] h-auto sm:h-[63%] sm:w-auto mt-[5.5rem] mx-10"
+        src={"/carddeck_all.svg"}
         alt="card deck"
         width={320}
         height={570}
-      /> */}
+      />
+      <div className="absolute mt-[5.5rem] aspect-[1/1.6] sm:w-[38vh] w-[66vw] shadow-[24px_24px_20px_5px_#0000009e]"></div>
       <img
-        className={` w-[67%] h-auto md:h-[60%] md:w-auto mt-24 mx-10 ${
+        className={` w-[67%] h-auto sm:h-[60%] sm:w-auto mt-24 mx-10 ${
           loading ? "hidden" : "block"
         } z-10 `}
         src={`/card/Artboard ${randomImg}CARD.png`}
@@ -94,7 +95,7 @@ const Card = () => {
         height={500}
         onLoad={() => setLoading(false)}
       />
-      <div className="font-['DungGeunMo'] text-[1rem] sm:text-[1.5rem] md:text-[1.7rem] mt-7 animate-bounce">
+      <div className="font-['DungGeunMo'] text-[1rem] sm:text-[1.5rem]  mt-11 animate-bounce">
         <span className="mr-1">&#9650;</span>꾹 눌러서 수집
       </div>
       <div className="font-['DungGeunMo'] absolute bottom-5 px-5 w-full flex justify-between text-[2.5vw] md:text-[2vw]">

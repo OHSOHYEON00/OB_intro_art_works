@@ -23,6 +23,7 @@ function App() {
     useEffect(() => {
       window.addEventListener("resize", sv);
       window.addEventListener("load", sv);
+      sv();
 
       return () => {
         window.removeEventListener("resize", sv);
