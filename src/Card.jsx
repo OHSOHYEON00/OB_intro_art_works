@@ -43,13 +43,15 @@ const Card = () => {
   };
 
   const sv = () => {
-    const vh = window.innerHeight * 0.01;
+    const vh =
+      window.visualViewport?.height * 0.01 || window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
   };
 
   useEffect(() => {
-    // window.addEventListener("resize", sv);
-    // window.addEventListener("load", sv);
+    window.addEventListener("resize", sv);
+    window.addEventListener("orientationchange", sv);
+    window.addEventListener("load", sv);
 
     if (window.performance) {
       const [navigation] = window.performance.getEntriesByType("navigation");
@@ -59,24 +61,32 @@ const Card = () => {
     }
 
     return () => {
-      // window.removeEventListener("resize", sv);
-      // window.removeEventListener("load", sv);
+      window.removeEventListener("resize", sv);
+      window.removeEventListener("orientationchange", sv);
+      window.removeEventListener("load", sv);
     };
   }, []);
 
   return (
     <div
       className={
-        "cotainer custom-card h-screen-dynamic flex items-center flex-col"
+        "cotainer relative custom-card h-screen-dynamic flex items-center flex-col"
       }
     >
       {loading && (
         <div className="shadow-3xl w-[320px] h-auto md:h-[60%] md:w-auto mt-[10vh] mx-10"></div>
       )}
+      {/* <img
+        className="absolute w-screen "
+        src={"/carddeck.png"}
+        alt="card deck"
+        width={320}
+        height={570}
+      /> */}
       <img
-        className={`shadow-3xl w-[60%] h-auto md:h-[60%] md:w-auto mt-[10vh] mx-10 ${
+        className={` w-[67%] h-auto md:h-[60%] md:w-auto mt-24 mx-10 ${
           loading ? "hidden" : "block"
-        }`}
+        } z-10 `}
         src={`/card/Artboard ${randomImg}CARD.png`}
         alt="card"
         width={320}
