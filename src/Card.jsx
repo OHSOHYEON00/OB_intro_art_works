@@ -48,8 +48,8 @@ const Card = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("resize", sv);
-    window.addEventListener("load", sv);
+    // window.addEventListener("resize", sv);
+    // window.addEventListener("load", sv);
 
     if (window.performance) {
       const [navigation] = window.performance.getEntriesByType("navigation");
@@ -59,8 +59,8 @@ const Card = () => {
     }
 
     return () => {
-      window.removeEventListener("resize", sv);
-      window.removeEventListener("load", sv);
+      // window.removeEventListener("resize", sv);
+      // window.removeEventListener("load", sv);
     };
   }, []);
 
